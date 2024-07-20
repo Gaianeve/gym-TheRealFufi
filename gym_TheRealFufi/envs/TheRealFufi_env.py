@@ -218,9 +218,6 @@ class TheRealFufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
 
       return np.array(self.state, dtype=np.float32), reward, terminated, False, {}
 
-    else:
-      print('Real world cartpole non implemented yet')
-
 
 ### -------------------------------------- RESET FUNCTION ------------------------------------------##
 # Initialize state as described above
