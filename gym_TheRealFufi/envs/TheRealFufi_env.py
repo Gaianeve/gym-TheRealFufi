@@ -131,7 +131,6 @@ class TheRealFufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
         dtype=np.float32,
     )
     self.observation_space = spaces.Box(-high_obs, high_obs, dtype=np.float32)
-    print(f"Observation space dimension: {self.observation_space.shape}")
     self.action_space = spaces.Box(-high_actions, high_actions, dtype=np.float32)
     
     self.render_mode = render_mode
