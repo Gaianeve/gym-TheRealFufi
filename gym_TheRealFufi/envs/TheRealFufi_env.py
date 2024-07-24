@@ -123,15 +123,10 @@ class TheRealFufiEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
     
     #action limits.
     ## TO DO: set them according to our cart.
-    high_actions = np.array(
-        [
-            np.finfo(np.float32).max,
-            np.finfo(np.float32).max,
-        ],
-        dtype=np.float32,
-    )
+    action_lim = np.finfo(np.float32).max
+  
     self.observation_space = spaces.Box(-high_obs, high_obs, dtype=np.float32)
-    self.action_space = spaces.Box(-high_actions, high_actions, dtype=np.float32)
+    self.action_space = spaces.Box(low=-action_lim, high=action_lim, shape=(1,), dtype=np.float32)
     
     self.render_mode = render_mode
 
